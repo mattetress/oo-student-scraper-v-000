@@ -9,7 +9,7 @@ class Scraper
     student_info = []
     students = []
     students = doc.css("div.student-card").each do |student|
-      students << { name: student.css("h4").text, location: student.css("h4").text, profile_url: student.css("a").attribute("href").value }
+      students << { name: student.css("h4").text, location: student.css("p").text, profile_url: student.css("a").attribute("href").value }
 
       binding.pry
     end
