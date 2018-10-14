@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'pry'
-require 'nokogiri' 
+require 'nokogiri'
 
 class Scraper
 
@@ -17,7 +17,7 @@ class Scraper
 end
 
 
-# student 
+# student
 #
 #
 #
