@@ -18,7 +18,12 @@ class Scraper
     profile_info = {}
 
     doc.css("div.vitals-container div.social-icon-container a").each do |site|
-      binding.pry
+      media_type = site.css("img").attribute("src").value.split("/").last.gsub("-icon.png", "")
+      media_link = site.attribute("href").value
+      if media_type == "rss" 
+        profile_info[:blog] = media_link
+      else
+        profile_info[media_type.to_sym] = media_link
     end
 
   end
@@ -26,10 +31,6 @@ class Scraper
 end
 
 
-# student div.student-card
-# profile url:  student.css("a").attribute("href").value
-# name:  student.css("h4").text
-# location: student.css("p").text
-#
-#
-#
+
+# social media type:  site.css("img").attribute("src").value.split("/").last.gsub("-icon.png", "")
+# url: site.attribute("href").value
