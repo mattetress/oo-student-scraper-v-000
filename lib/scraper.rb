@@ -26,6 +26,7 @@ class Scraper
         profile_info[media_type.to_sym] = media_link
       end
     end
+    profile_info[:profile_quote] = doc.css("div.profile-quote").text
     binding.pry 
   end
 
