@@ -26,7 +26,7 @@ class Scraper
         profile_info[media_type.to_sym] = media_link
       end
     end
-
+    binding.pry 
   end
 
 end
