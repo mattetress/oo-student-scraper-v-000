@@ -23,7 +23,7 @@ class Scraper
       if media_type == "rss"
         profile_info[:blog] = media_link
       else
-        profile_info[media_type.to_sym] = media_link
+        profile_info[media_type.to_sym] = media_link unless media_type == "facebook.png"
       end
     end
 
