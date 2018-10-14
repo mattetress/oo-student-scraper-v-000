@@ -20,10 +20,11 @@ class Scraper
     doc.css("div.vitals-container div.social-icon-container a").each do |site|
       media_type = site.css("img").attribute("src").value.split("/").last.gsub("-icon.png", "")
       media_link = site.attribute("href").value
-      if media_type == "rss" 
+      if media_type == "rss"
         profile_info[:blog] = media_link
       else
         profile_info[media_type.to_sym] = media_link
+      end
     end
 
   end
